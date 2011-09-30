@@ -20,7 +20,7 @@ class Structure:
         else:
             print "Can't find file"
 
-    def runCryson(self, d2o=1.0):
+    def runCryson(self, d2o=0.0):
         """Method for running crysol over the pdb"""
 
         d2o = str(d2o)

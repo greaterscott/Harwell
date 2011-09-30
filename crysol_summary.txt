@@ -1,5 +1,10 @@
 
- Created by CRYSOL v. 28 on   30-Sep-2011   13:33:05
+ Created by CRYSOL v. 28 on   30-Sep-2011   13:40:42
+
+ Batch: 1MHT.pdb
+ PDB file: 1MHT.pdb              Theoretical Rg:  21.83
+
+ Created by CRYSOL v. 28 on   30-Sep-2011   13:42:04
 
  Batch: 1MHT.pdb
  PDB file: 1MHT.pdb              Theoretical Rg:  21.83
