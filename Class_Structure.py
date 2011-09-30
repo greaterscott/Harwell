@@ -55,6 +55,9 @@ class Structure:
         return
 
 
+    
+
+
 pdb=raw_input('pdb code?  ')
 p=Structure(pdb)
 p.runCrysol()
