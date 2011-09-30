@@ -38,7 +38,7 @@ class Structure:
         return
 
 
-    def runCryson(self, d2o=1.0):
+    def runCryson(self, d2o=0.0):
         """Method for running crysol over the pdb"""
 
         os.chdir('cryson')
