@@ -37,7 +37,14 @@ class Structure:
 p = Structure('fen1')
 p.runCrysol()
 p.runCryson()
-p.runCryson(0.0)
+pdb=raw_input('pdb code?  ')
++p=Structure(pdb)
++p.runCrysol()
++p.runCryson()
++x=0.0
++while x<=1.0:
++    p.runCryson(x)
++    x=x+0.1
 
         
         
