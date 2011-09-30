@@ -56,7 +56,6 @@ class Structure:
         os.chdir('..')
         return
 
-
     def runStuhrmann(self, contrasts=[]):
         """Generating Data for a Sturhmann Plot, defaults to 10 points"""
 
@@ -99,6 +98,17 @@ plt.show()
 
 while True:
     pass
+    
+
+
+#pdb=raw_input('pdb code?  ')
+#p=Structure(pdb)
+#p.runCrysol()
+#p.runCryson()
+#x=0.0
+#while x<=1.0:
+#    p.runCryson(x)
+#    x=x+0.1
 
         
         
