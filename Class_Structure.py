@@ -1,4 +1,5 @@
 import subprocess
+import os
 import os.path
 
 class Structure:
@@ -8,30 +9,50 @@ class Structure:
 
         self.pdb = pdb
         self.pdbpath = self.pdb + '.pdb'
+        self.structurerootpath = os.getcwd()
+        
+        self.initDir('crysol')
+        self.initDir('cryson')
+        self.initDir('stuhrmann')
+
+    def initDir(self, dirname):
+        if os.path.exists(dirname) and os.path.isdir(dirname):
+            pass
+        else:
+            os.mkdir(dirname)            
 
     def runCrysol(self):
         """Method for running crysol over the pdb""" 
 
-        if os.path.exists(self.pdbpath):
-            p = subprocess.Popen(['crysol', self.pdbpath], stdout=subprocess.PIPE)
+        # crysol directory should exist and throwing error if not is appropriate
+        os.chdir('crysol')
+        pdbpath = '../' + self.pdbpath
+        if os.path.exists(pdbpath):
+            p = subprocess.Popen(['crysol', pdbpath], stdout=subprocess.PIPE)
             p.wait()
-            return
         
         else:
             print "Can't find file"
+        
+        os.chdir('..')
+        return
+
 
     def runCryson(self, d2o=1.0):
         """Method for running crysol over the pdb"""
 
+        os.chdir('cryson')
+        pdbpath = '../' + self.pdbpath
         d2o = str(d2o)
-        if os.path.exists(self.pdbpath):
-            p = subprocess.Popen(['cryson', self.pdbpath, '/d2o', d2o], stdout=subprocess.PIPE)
+        if os.path.exists(pdbpath):
+            p = subprocess.Popen(['cryson', pdbpath, '/d2o', d2o], stdout=subprocess.PIPE)
             p.wait()
-            return
         
         else:
             print "Can't find file"
 
+        os.chdir('..')
+        return
 
 
 pdb=raw_input('pdb code?  ')
